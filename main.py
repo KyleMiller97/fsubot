@@ -3,12 +3,13 @@ from discord import app_commands
 from discord.ext import commands
 from discord.ui import Button, View
 import openai
+from tokens import discordToken , openAPI
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents= discord.Intents.all())
 
-dst = 'MTEzMjc3NTkyMTgxNjk4MTUwNg.GWrDHM.PvYnMBJuu-YyLJy5eWuYwSW0l520-OyiFrPwRo'
-openai.api_key = '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'
+dst = discordToken
+openai.api_key = openAPI
 
 @bot.event
 async def on_ready():
